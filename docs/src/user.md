@@ -1,3 +1,7 @@
+```@meta
+CurrentModule = MyLib
+```
+
 # User guide
 
 ```@contents

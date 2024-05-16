@@ -60,8 +60,6 @@ jobs:
           Pkg.instantiate()
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-docdeploy@v1
-      - name: Build and deploy
-        run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
@@ -72,3 +70,5 @@ jobs:
           using MyLib
           DocMeta.setdocmeta!(MyLib, :DocTestSetup, :(using MyLib); recursive=true)
           doctest(MyLib)
+      - name: Build and deploy
+        run: julia --project=docs docs/make.jl
